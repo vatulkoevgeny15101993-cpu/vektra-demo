@@ -1,0 +1,14 @@
+services:
+  vektra:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD in .env}
+      PUBLIC_URL: ${PUBLIC_URL:-http://localhost:8000}
+      DATABASE_PATH: /data/vektra.sqlite3
+    volumes:
+      - vektra-data:/data
+volumes:
+  vektra-data:

@@ -3,97 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ВЕКРА — AI-отдел продаж</title>
-  <style>
-    :root {
-      --bg: #0b1220;
-      --panel: #111c30;
-      --text: #eef4ff;
-      --muted: #9aa9c1;
-      --cyan: #17c9e8;
-      --violet: #8b5cf6;
-      --green: #35d07f;
-      --border: rgba(255,255,255,.11);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, Arial, sans-serif;
-      color: var(--text);
-      background: radial-gradient(circle at 15% 0%, #19345c 0, transparent 35%),
-                  radial-gradient(circle at 90% 10%, #33205b 0, transparent 34%),
-                  var(--bg);
-    }
-    .wrap { width: min(1180px, calc(100% - 32px)); margin: auto; }
-    header {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 24px 0; border-bottom: 1px solid var(--border);
-    }
-    .logo { font-size: 28px; font-weight: 900; letter-spacing: 1px; color: var(--cyan); }
-    .badge {
-      padding: 8px 13px; border: 1px solid rgba(23,201,232,.35);
-      background: rgba(23,201,232,.1); border-radius: 999px; color: var(--cyan);
-      font-size: 13px; font-weight: 700;
-    }
-    .hero { text-align: center; padding: 80px 0 48px; }
-    h1 { font-size: clamp(38px, 7vw, 68px); margin: 0 0 18px; line-height: 1.05; }
-    h1 span { color: var(--cyan); }
-    .hero p { max-width: 650px; margin: auto; color: var(--muted); font-size: 19px; line-height: 1.55; }
-    .buttons { display: flex; justify-content: center; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
-    .button {
-      display: inline-block; padding: 14px 20px; border-radius: 10px; text-decoration: none;
-      color: white; font-weight: 800; border: 1px solid var(--border);
-    }
-    .primary { background: linear-gradient(90deg, var(--cyan), var(--violet)); border: 0; }
-    .secondary { background: rgba(255,255,255,.06); }
-    .stats, .cards, .pricing { display: grid; gap: 16px; }
-    .stats { grid-template-columns: repeat(4, 1fr); margin: 38px 0 80px; }
-    .cards { grid-template-columns: repeat(3, 1fr); }
-    .pricing { grid-template-columns: repeat(3, 1fr); }
-    .card {
-      background: rgba(17,28,48,.88); border: 1px solid var(--border);
-      border-radius: 16px; padding: 24px;
-    }
-    .value { font-size: 38px; font-weight: 900; color: var(--cyan); }
-    .label, .muted { color: var(--muted); }
-    h2 { font-size: 34px; margin: 0 0 25px; }
-    section { margin: 70px 0; }
-    .dashboard { overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; min-width: 650px; }
-    th, td { text-align: left; padding: 16px 10px; border-bottom: 1px solid var(--border); }
-    th { color: var(--muted); font-size: 13px; text-transform: uppercase; }
-    .score { padding: 5px 10px; border-radius: 999px; font-weight: 800; font-size: 13px; }
-    .a { color: var(--green); background: rgba(53,208,127,.12); }
-    .b { color: #ffd166; background: rgba(255,209,102,.12); }
-    .price { font-size: 42px; color: var(--cyan); font-weight: 900; margin: 14px 0; }
-    .featured { outline: 2px solid var(--cyan); }
-    ul { padding-left: 20px; color: var(--muted); line-height: 2; }
-    footer { padding: 35px 0; text-align: center; color: var(--muted); border-top: 1px solid var(--border); }
-    @media (max-width: 780px) {
-      .stats, .cards, .pricing { grid-template-columns: 1fr; }
-      header { gap: 14px; }
-    }
-  </style>
+  <title>ВЕКРА — управление лидами и продажами</title>
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="stylesheet" href="/service.css">
+  <script defer src="/app.js"></script>
 </head>
 <body>
   <div class="wrap">
     <header>
       <div class="logo">ВЕКРА</div>
-      <div class="badge">ДЕМО-РЕЖИМ</div>
+      <a class="button secondary" href="/admin">Кабинет команды</a>
     </header>
 
     <main>
       <section class="hero">
-        <h1>AI-отдел продаж<br><span>под ключ</span></h1>
-        <p>ВЕКРА объединяет работу с лидами, персональные сообщения, приоритизацию сделок и аналитику в одном интерфейсе.</p>
+        <h1>Поймите, кому продавать сегодня<br><span>и с чего начать разговор</span></h1>
+        <p>ВЕКРА помогает расставить приоритеты среди лидов и подготовить персональное письмо. Пройдите пример на демонстрационных данных.</p>
         <div class="buttons">
-          <a class="button primary" href="#dashboard">Открыть демо</a>
-          <a class="button secondary" href="#pricing">Посмотреть тарифы</a>
+          <a class="button primary" href="#dashboard">Разобрать первого лида</a>
+          <a class="button secondary" href="#request">Обсудить внедрение</a>
         </div>
       </section>
 
-      <section class="stats">
+      <p class="muted small">Без регистрации · Вымышленные контакты · Письма не отправляются</p>
+      <p class="muted small">Пример показателей на демонстрационных данных</p>
+      <section class="stats" aria-label="Демонстрационные показатели">
         <div class="card"><div class="value">247</div><div class="label">Лидов в работе</div></div>
         <div class="card"><div class="value">18.4%</div><div class="label">Конверсия</div></div>
         <div class="card"><div class="value">12</div><div class="label">Сделок за месяц</div></div>
@@ -101,42 +35,70 @@
       </section>
 
       <section id="dashboard">
-        <h2>Панель управления</h2>
+        <h2>Кому написать первым?</h2>
         <div class="card dashboard">
-          <p class="muted">Горячие лиды · демонстрационные данные</p>
+          <p class="muted">Выберите компанию и посмотрите рекомендуемое действие. Все контакты вымышлены.</p>
           <table>
             <thead>
-              <tr><th>Компания</th><th>Контакт</th><th>Оценка</th><th>Вероятность</th><th>Следующее действие</th></tr>
+              <tr><th>Компания</th><th>Контакт</th><th>Оценка</th><th>Приоритет</th><th>Следующее действие</th></tr>
             </thead>
             <tbody>
-              <tr><td>TechStart GmbH</td><td>Max Mueller</td><td><span class="score a">A</span></td><td>87%</td><td>Позвонить сегодня</td></tr>
-              <tr><td>SalesFlow UAB</td><td>Jonas P.</td><td><span class="score a">A</span></td><td>82%</td><td>Отправить письмо</td></tr>
-              <tr><td>Digital Solutions</td><td>Anna Schmidt</td><td><span class="score b">B</span></td><td>65%</td><td>Назначить follow-up</td></tr>
+              <tr><td>TechStart GmbH</td><td>Max Mueller</td><td><span class="score a">A</span></td><td>Высокий</td><td><button class="button secondary" data-demo="0" type="button">Разобрать лида</button></td></tr>
+              <tr><td>SalesFlow UAB</td><td>Jonas P.</td><td><span class="score a">A</span></td><td>Высокий</td><td><button class="button secondary" data-demo="1" type="button">Разобрать лида</button></td></tr>
+              <tr><td>Digital Solutions</td><td>Anna Schmidt</td><td><span class="score b">B</span></td><td>Средний</td><td><button class="button secondary" data-demo="2" type="button">Разобрать лида</button></td></tr>
             </tbody>
           </table>
+        </div>
+        <div id="demo-panel" class="card panel" hidden>
+          <p class="steps">1. Выберите лида → 2. Подготовьте письмо → 3. Обсудите свой сценарий</p>
+          <h3 id="demo-title" tabindex="-1"></h3><p id="demo-reason"></p><p id="demo-action"></p>
+          <p class="muted small">Демонстрационный сценарий: оценки и тексты подготовлены заранее.</p>
+          <button id="generate-demo" class="button primary" type="button">Подготовить письмо</button>
+          <div id="demo-draft-wrap" hidden>
+            <label for="demo-draft">Черновик — можно отредактировать</label><textarea id="demo-draft"></textarea>
+            <div class="buttons"><button id="copy-demo" class="button secondary" type="button">Скопировать письмо</button><a class="button primary" href="#request">Посмотреть на примере моей компании</a></div>
+          </div>
+          <p id="demo-status" role="status"></p>
         </div>
       </section>
 
       <section>
         <h2>Возможности ВЕКРА</h2>
         <div class="cards">
-          <div class="card"><h3>AI-скоринг лидов</h3><p class="muted">Приоритизация контактов по вероятности сделки и вовлечённости.</p></div>
-          <div class="card"><h3>Персональные письма</h3><p class="muted">Черновики сообщений с учётом отрасли, компании и стадии сделки.</p></div>
-          <div class="card"><h3>Аналитика</h3><p class="muted">Воронка, конверсии, источники лидов и прогноз выручки.</p></div>
+          <div class="card"><h3>Приоритизация лидов</h3><p class="muted">Оценка по заполненности заявки, интересу к тарифу и стадии сделки. Каждое правило видно в кабинете.</p></div>
+          <div class="card"><h3>Персональные письма</h3><p class="muted">Редактируемые черновики по шаблону с именем контакта, компанией и выбранным тарифом.</p></div>
+          <div class="card"><h3>Аналитика</h3><p class="muted">Количество заявок, распределение по статусам и доля выигранных сделок в кабинете команды.</p></div>
         </div>
       </section>
 
       <section id="pricing">
-        <h2>Тарифы</h2>
+        <h2>Тарифы</h2><p class="muted">Предварительные пакеты из демо. Состав, период оплаты и стоимость согласуются отдельно. Онлайн-оплаты нет.</p>
         <div class="pricing">
-          <div class="card"><h3>Starter</h3><div class="price">€399</div><ul><li>Базовая воронка</li><li>Email-кампании</li><li>До 100 лидов</li></ul></div>
-          <div class="card featured"><h3>Professional</h3><div class="price">€999</div><ul><li>AI-скоринг</li><li>Персонализация писем</li><li>До 500 лидов</li><li>A/B-тесты</li></ul></div>
-          <div class="card"><h3>Enterprise</h3><div class="price">€2 999</div><ul><li>Безлимитные лиды</li><li>CRM-интеграции</li><li>Расширенная аналитика</li></ul></div>
+          <div class="card"><h3>Starter</h3><div class="price">€399</div><ul><li>Базовая воронка</li><li>Email-кампании</li><li>До 100 лидов</li></ul><a class="button secondary" data-plan="Starter" href="#request">Обсудить Starter</a></div>
+          <div class="card featured"><h3>Professional</h3><div class="price">€999</div><ul><li>AI-скоринг</li><li>Персонализация писем</li><li>До 500 лидов</li><li>A/B-тесты</li></ul><a class="button secondary" data-plan="Professional" href="#request">Обсудить Professional</a></div>
+          <div class="card"><h3>Enterprise</h3><div class="price">€2 999</div><ul><li>Безлимитные лиды</li><li>CRM-интеграции</li><li>Расширенная аналитика</li></ul><a class="button secondary" data-plan="Enterprise" href="#request">Обсудить Enterprise</a></div>
         </div>
+      </section>
+      <section id="request" class="card">
+        <h2>Как ВЕКРА может работать с вашими лидами?</h2>
+        <p class="muted">Оставьте заявку, чтобы обсудить процесс продаж вашей компании.</p>
+        <form id="request-form">
+          <div class="form-grid">
+            <div><label for="email">Рабочий email *</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
+            <div><label for="company">Компания *</label><input id="company" name="company" autocomplete="organization" maxlength="200" required></div>
+            <div><label for="contact">Как к вам обращаться</label><input id="contact" name="contact" autocomplete="name" maxlength="200"></div>
+            <div><label for="website">Сайт компании</label><input id="website" name="website" type="url" placeholder="https://example.com" maxlength="500"></div>
+          </div>
+          <label for="plan">Интересующий тариф</label><select id="plan" name="plan"><option>Не выбран</option><option>Starter</option><option>Professional</option><option>Enterprise</option></select>
+          <label class="consent"><input id="consent" type="checkbox" required><span>Согласен на обработку указанных данных для ответа на заявку. Данные сохраняются в базе сервиса и доступны его команде.</span></label>
+          <button id="send-request" class="button primary" type="submit">Запросить демонстрацию</button>
+          <p id="request-status" role="status" aria-live="polite"></p>
+        </form>
+        <noscript>Для демо и отправки заявки включите JavaScript.</noscript>
       </section>
     </main>
 
-    <footer>© 2026 ВЕКРА · Демо-версия</footer>
+    <footer>© 2026 ВЕКРА · <a href="/admin">Кабинет команды</a></footer>
   </div>
 </body>
 </html>
